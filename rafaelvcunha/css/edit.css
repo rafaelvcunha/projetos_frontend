@@ -1,0 +1,10 @@
+.nome-empresa {
+    /*font-family:"Alien League Gradient Bold" !important;
+    src: url('http://www.fontsaddict.com/fontface/alien-league-gradient-bold.ttf') !important;*/
+    font-family:"Alien League" !important;
+    src: url('http://www.fontsaddict.com/fontface/alien-league.ttf') !important;
+    /*color: white !important;*/
+    /*font-size: 4em !important;*/
+    font-weight: bold !important;
+    /*text-transform: none !important;*/
+}
