@@ -4,6 +4,11 @@
     font-weight: bold !important;
 }
 
+.nome-blog {
+    font-family: Ubuntu, sans-serif !important;
+    font-weight: bold !important;
+}
+
 .navy{
     color: navy;
 }
@@ -30,4 +35,36 @@
 .titulo { 
 	display: block;
 	margin-bottom: 1em;
+    margin-left: 0.40em;
+}
+
+.row{
+    margin-right: 0px;
+}
+
+.red{
+    color: red;
+}
+
+.btn-ghost {
+    color: #2b90d9;
+    background-color: transparent;
+    border-color: #2b90d9;
+}
+
+.btn {
+    font-weight: 700;
+    font-family: "Roboto",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.55;
+    border-radius: 0;
+}
+
+.post .post__intro {
+    text-align: left;
+    font-size: 15px;
+    color: #000;
 }
