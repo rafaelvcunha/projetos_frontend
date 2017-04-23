@@ -4,3 +4,30 @@
     font-weight: bold !important;
 }
 
+.navy{
+    color: navy;
+}
+
+.circle {
+    border-radius: 100%;
+    display: inline;
+    font-size: 2em;
+    border: 1px solid #000000;
+}
+
+.x2x{
+    font-size: 2em;
+}
+
+.x3x{
+    font-size: 3em;
+}
+
+.x4x{
+    font-size: 4em;
+}
+
+.titulo { 
+	display: block;
+	margin-bottom: 1em;
+}
