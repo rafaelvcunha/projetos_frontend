@@ -13,7 +13,7 @@ var soma = numeros.reduce(function(somaAux, numero){
 
 console.log(soma);
 
-/********************************/
+/***********************************/
 
 var alunos = [
     { nome: 'Rafael', idade: 27 },
