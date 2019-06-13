@@ -1,4 +1,7 @@
 import React from 'react';
+import User from './User';
+import photo from './opengraph-blog.png'
+
 
 function Rafael() {
   return (
@@ -6,7 +9,8 @@ function Rafael() {
         <p>
           Novo Componente Rafael criado!!!
         </p>
-
+        <User name="Rafael" photo={photo}></User>
+        <User name="Mônica"></User>
       
     </div>
   );
