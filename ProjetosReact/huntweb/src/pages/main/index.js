@@ -3,15 +3,17 @@ import api from "../../services/api"
 
 export default class Main extends Component{
     state = {
-        cep: []
+        viaCep: [],
     };
     
     componentDidMount(){
-        this.loadCep();
+        this.loadViaCep();
     }
 
-    loadCep = async () => {
-        const response = await api.get('/');
+    loadViaCep = async () => {
+        const response = await api.get('json');
+
+        this.setState({ viaCep: response.data });
 
         console.log(response.data);
         
@@ -19,7 +21,15 @@ export default class Main extends Component{
 
     render(){
         return (
-            <h1>{this.state.cep.map(home => <div>{home.logradouro}</div>)}</h1>
-        );
+            <div>
+                <h2>Endereço Solicitado</h2>
+                <p>CEP: { this.state.viaCep.cep} </p>             
+                <p>Logradouro: { this.state.viaCep.logradouro}</p>
+                <p>Complemento: { this.state.viaCep.complemento}</p>
+                <p>Bairro: { this.state.viaCep.bairro}</p>
+                <p>Localidade: { this.state.viaCep.localidade}</p>
+                <p>Uf: { this.state.viaCep.uf}</p>
+            </div>
+        )
     }
 }
