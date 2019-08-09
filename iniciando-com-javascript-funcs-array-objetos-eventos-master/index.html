@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>        
+        function fatorial(num) {
+            if (num == 1) {
+                return 1;
+            } else {
+                return num * fatorial(num - 1)
+            }
+            // console.log('Hello ' + name + ' from School of net')
+            // return funcName()            
+        }
+        
+        var result = fatorial(10)
+        console.log('Result -> ', result)
+    </script>
+</body>
+</html>
