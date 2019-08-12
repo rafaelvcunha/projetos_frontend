@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <button onclick="clickMe()">Clique Aqui!</button> -->
+    <button id="btn" >Clique Aqui!</button>
+    
+    <script>
+        //Inicia o evento ao DOM ser carregado
+        document.addEventListener('DOMContentLoaded', function(event){
+            alert('Inicia o evento ao DOM ser carregado')
+        })
+
+        //Inicia o evento após carragor todo o DOM
+        document.body.onload = function(){
+            if(navigator.onLine){
+                alert('Online')
+            } else{
+                alert('Offline')
+            }
+        }
+
+        function clickMe(){
+            alert("Este é um botão customizado");
+        }
+        document.addEventListener('click', clickMe);
+
+    </script>
+
+    
+</body>
+</html>
