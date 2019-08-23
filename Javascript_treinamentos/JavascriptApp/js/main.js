@@ -11,4 +11,16 @@ function getTotal(list){
     }
     return total;
 }
+
+function setList(list){
+    var table = '<thead><tr><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Value</th><th scope="col">Action</th></tr></thead><tbody>';
+    for(var key in list){
+        table += '<tr><th scope="row">'+ list[key].desc +'</th><td>'+ list[key].amount +'</td><td>'+ list[key].value+'</td><td> Edit | Delete </td></tr>';
+    }
+    table += '</tbody>';
+    document.getElementById("listTable").innerHTML = table;
+}
+
+setList(list);
+
 console.log(getTotal(list));
