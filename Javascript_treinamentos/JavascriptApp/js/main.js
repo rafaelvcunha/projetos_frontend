@@ -15,7 +15,7 @@ function getTotal(list){
 function setList(list){
     var table = '<thead><tr><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Value</th><th scope="col">Action</th></tr></thead><tbody>';
     for(var key in list){
-        table += '<tr><th scope="row">'+ formatDesc(list[key].desc) +'</th><td>'+ list[key].amount +'</td><td>'+ formatValue(list[key].value) +'</td><td> Edit | Delete </td></tr>';
+        table += '<tr><th scope="row">'+ formatDesc(list[key].desc) +'</th><td>'+ list[key].amount +'</td><td>'+ formatValue(list[key].value) +'</td><td><button onclick="setUpdate('+key+');" class="btn btn-default" >Edit</button> | Delete </td></tr>';
     }
     table += '</tbody>';
     document.getElementById("listTable").innerHTML = table;
@@ -33,6 +33,31 @@ function formatValue(val){
     return str;
 }
 
-setList(list);
+function addData(){
+    var desc = document.getElementById("desc").value;
+    var amount = document.getElementById("amount").value;
+    var value = document.getElementById("value").value;
 
+    list.unshift({"desc":desc , "amount":amount , "value":value });
+    setList(list);
+}
+
+function setUpdate(id){
+    var obj = list[id];
+    document.getElementById("desc").value = formatDesc(obj.desc);
+    document.getElementById("amount").value = obj.amount;
+    document.getElementById("value").value = obj.value;
+    document.getElementById("btnUpdate").style.display = "inline-block";
+    document.getElementById("btnAdd").style.display = "none";
+}
+
+function resetForm(){
+    document.getElementById("desc").value = "";
+    document.getElementById("amount").value = "";
+    document.getElementById("value").value = "";
+    document.getElementById("btnUpdate").style.display = "none";
+    document.getElementById("btnAdd").style.display = "inline-block";
+}
+
+setList(list);
 console.log(getTotal(list));
