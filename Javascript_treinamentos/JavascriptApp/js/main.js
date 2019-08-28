@@ -15,7 +15,7 @@ function getTotal(list){
 function setList(list){
     var table = '<thead><tr><th scope="col">Description</th><th scope="col">Amount</th><th scope="col">Value</th><th scope="col">Action</th></tr></thead><tbody>';
     for(var key in list){
-        table += '<tr><th scope="row">'+ formatDesc(list[key].desc) +'</th><td>'+ list[key].amount +'</td><td>'+ formatValue(list[key].value) +'</td><td><button onclick="setUpdate('+key+');" class="btn btn-default" >Edit</button> | Delete </td></tr>';
+        table += '<tr><th scope="row">'+ formatDesc(list[key].desc) +'</th><td>'+ list[key].amount +'</td><td>'+ formatValue(list[key].value) +'</td><td><button onclick="setUpdate('+key+');" class="btn btn-default" >Edit</button> <button onclick="deleteData('+key+');" class="btn btn-default" >Delete</button> </td></tr>';
     }
     table += '</tbody>';
     document.getElementById("listTable").innerHTML = table;
@@ -73,6 +73,25 @@ function updateData(){
     resetForm();
     setList(list);
 
+
+}
+
+
+function deleteData(id){
+
+    if( confirm("Quer deletar esse item?") ){
+        if( id === 0 ){
+            list.shift()
+        } else if( id === list.length -1){
+            list.pop();
+        } else {
+            var listAuxIni = list.slice(0,id);
+            var listAuxFim = list.slice(id + 1);
+            list = listAuxIni.concat(listAuxFim);
+        }
+
+        setList(list)
+    }
 
 }
 
